@@ -1,3 +1,6 @@
+
+import dotenv from "dotenv";
+
 import ProductRoutes from './Routes/ProductRoutes.js'
 import OrderRoutes from './Routes/OrderRoutes.js'
 import authRoutes from './Routes/authRoutes.js'
@@ -13,6 +16,7 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 
+dotenv.config();
 
 const app = express();
 const port=5000;
