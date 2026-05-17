@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =========================
+   PAGE
+========================= */
+
+.profile-page{
+  min-height:100vh;
+  background:#f6f3ee;
+  padding:70px 50px 100px;
+  font-family:"Inter",sans-serif;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.profile-hero{
+  display:flex;
+  justify-content:center;
+  margin-bottom:90px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card{
+  width:1200px;
+  min-height:620px;
+  background:#fffdfa;
+  border-radius:40px;
+  overflow:hidden;
+  display:flex;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  border:1px solid #ece3d7;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.profile-left{
+  width:45%;
+  position:relative;
+  overflow:hidden;
+}
+
+.profile-banner-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.8s ease;
+}
+
+.profile-card:hover .profile-banner-image{
+  transform:scale(1.05);
+}
+
+.profile-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.25),transparent);
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.profile-right{
+  width:55%;
+  padding:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.profile-top{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-bottom:45px;
+}
+
+.profile-main-image{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid #fff;
+  box-shadow:0 10px 24px rgba(0,0,0,0.12);
+}
+
+.profile-badge{
+  padding:12px 22px;
+  border-radius:999px;
+  background:#efe7db;
+  color:#8a6746;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.profile-mini-title{
+  font-size:13px;
+  letter-spacing:3px;
+  color:#b08c68;
+  margin-bottom:18px;
+}
+
+.profile-title{
+  font-family:"Playfair Display",serif;
+  font-size:68px;
+  line-height:1;
+  font-weight:600;
+  color:#171717;
+  margin-bottom:22px;
+}
+
+.profile-name{
+  font-size:34px;
+  font-weight:600;
+  color:#202020;
+  margin-bottom:12px;
+}
+
+.profile-email{
+  font-size:18px;
+  color:#7b746d;
+  margin-bottom:45px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.profile-stats{
+  display:flex;
+  gap:24px;
+}
+
+.stat-box{
+  flex:1;
+  background:#faf5ef;
+  border-radius:26px;
+  padding:28px;
+  border:1px solid #eee4d7;
+}
+
+.stat-box h3{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  font-weight:600;
+  color:#181818;
+  margin-bottom:10px;
+}
+
+.stat-box p{
+  font-size:15px;
+  color:#8b8279;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.products-section{
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:50px;
+}
+
+.section-mini-title{
+  font-size:13px;
+  letter-spacing:3px;
+  color:#b08c68;
+  margin-bottom:14px;
+}
+
+.section-title{
+  font-family:"Playfair Display",serif;
+  font-size:62px;
+  line-height:1;
+  font-weight:600;
+  color:#171717;
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,300px));
+  gap:40px;
+  justify-content:center;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card{
+  background:#fffdfa;
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid #eee5d9;
+  box-shadow:0 10px 26px rgba(0,0,0,0.05);
+  transition:0.45s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 24px 50px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.product-image-wrapper{
+  overflow:hidden;
+}
+
+.product-image{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:0.8s ease;
+}
+
+.product-card:hover .product-image{
+  transform:scale(1.06);
+}
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
+.product-content{
+  padding:28px;
+}
+
+.product-content h2{
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  line-height:1.15;
+  font-weight:600;
+  color:#181818;
+  margin-bottom:18px;
+}
+
+.product-content h3{
+  font-family:"Playfair Display",serif;
+  font-size:30px;
+  color:#b68758;
+  margin-bottom:18px;
+}
+
+.product-content p{
+  font-size:15px;
+  line-height:1.8;
+  color:#7d746b;
+  margin-bottom:30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.buy-btn{
+  width:100%;
+  height:58px;
+  border:none;
+  border-radius:18px;
+  background:#111;
+  color:white;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.35s ease;
+}
+
+.buy-btn:hover{
+  background:#2f2f2f;
+  transform:translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .profile-card{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .profile-left{
+    width:100%;
+    height:360px;
+  }
+
+  .profile-right{
+    width:100%;
+    padding:50px 35px;
+  }
+
+  .profile-title{
+    font-size:52px;
+  }
+
+  .profile-stats{
+    flex-direction:column;
+  }
+}
+
+@media(max-width:768px){
+
+  .profile-page{
+    padding:40px 20px 80px;
+  }
+
+  .profile-top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .profile-title{
+    font-size:42px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-card{
+    width:100%;
+  }
+}

@@ -1,0 +1,77 @@
+.footer {
+  background: #f1ece8;   
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;   
+}
+
+.footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+.footer label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  color: #7a736d;   
+  margin-bottom: 8px;
+}
+
+.footer-input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #e6e1dc;   
+  font-size: 14px;
+  margin-bottom: 30px;
+  outline: none;
+  transition: 0.3s;
+}
+.footer-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #2c2c2c, #1a1a1a);
+  color: white;
+  padding: 14px;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.footer-btn:hover {
+  background: black;
+}
+
+.footer-btn:hover {
+  background: black;
+}
+
+.footer-icons i {
+  font-size: 16px;
+  color: #6b625c;   
+  transition: 0.3s;
+}
+
+.footer-icons i {
+  font-size: 16px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.footer-icons i:hover {
+  color: black;
+}

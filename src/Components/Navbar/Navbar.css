@@ -1,0 +1,115 @@
+.navbar {
+  width: 100%;
+  background: #f5f2ef;
+  padding: 18px 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+
+.logo {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 32px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+.logo:visited,
+.logo:active {
+  color: #2b2b2b;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: black;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.logout-text {
+  margin-left: 10px;
+}
+
+.navbar button {
+  position: relative;
+}
+
+.navbar button::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: black;
+  transition: 0.3s;
+}
+
+.navbar button:hover::after {
+  width: 100%;
+}
+
+.nav-profile{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.profile-icon{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
+  cursor:pointer;
+  border:2px solid #ddd;
+  transition:0.3s;
+}
+
+.profile-icon:hover{
+  transform:scale(1.08);
+  border-color:#6c63ff;
+}
+
+.logout-text{
+  cursor:pointer;
+}

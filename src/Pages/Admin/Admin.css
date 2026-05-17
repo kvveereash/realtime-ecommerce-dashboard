@@ -1,0 +1,477 @@
+/* ===== PAGE ===== */
+
+.admin-page{
+    min-height:100vh;
+
+    background:#f5f5f5;
+
+    padding:40px;
+
+    font-family:'Poppins', sans-serif;
+}
+
+
+/* ===== HEADER ===== */
+
+.admin-header{
+    margin-bottom:35px;
+}
+
+
+/* ===== TITLE ===== */
+
+.admin-title{
+    font-size:52px;
+
+    color:#111827;
+
+    font-family:'Playfair Display', serif;
+
+    margin-bottom:10px;
+}
+
+
+/* ===== SUBTITLE ===== */
+
+.admin-subtitle{
+    color:#6b7280;
+
+    font-size:17px;
+}
+
+
+/* ===== TOP SECTION ===== */
+
+.admin-top-section{
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+    margin-bottom:55px;
+}
+
+
+/* ===== FORM ===== */
+
+.admin-form{
+    background:white;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+
+/* ===== FORM TITLE ===== */
+
+.form-title{
+    font-size:38px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+
+    font-family:'Playfair Display', serif;
+}
+
+
+/* ===== INPUTS ===== */
+
+.admin-form input,
+.admin-form textarea{
+    width:100%;
+
+    padding:18px 20px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    background:#fafafa;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s ease;
+}
+
+
+/* ===== INPUT FOCUS ===== */
+
+.admin-form input:focus,
+.admin-form textarea:focus{
+    border-color:#111827;
+
+    background:white;
+}
+
+
+/* ===== TEXTAREA ===== */
+
+.admin-form textarea{
+    min-height:150px;
+
+    resize:none;
+}
+
+
+/* ===== BUTTON ===== */
+
+.admin-form button{
+    height:55px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #000000,
+        #1f2937
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+
+.admin-form button:hover{
+    transform:translateY(-3px);
+
+    opacity:0.95;
+}
+
+
+/* ===== SIDE PANEL ===== */
+
+.admin-side-panel{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+
+/* ===== MINI CARD ===== */
+
+.admin-mini-card{
+    background:white;
+
+    border-radius:26px;
+
+    padding:30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+}
+
+
+.admin-mini-card h1{
+    font-size:42px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+
+.admin-mini-card p{
+    color:#6b7280;
+
+    font-size:16px;
+}
+
+
+/* ===== SEARCH ===== */
+
+.search-box{
+    margin-top:auto;
+}
+
+
+.search-box input{
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:0 24px;
+
+    background:white;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+    font-size:16px;
+
+    outline:none;
+}
+
+
+/* ===== PRODUCTS GRID ===== */
+
+.admin-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:32px;
+}
+
+
+/* ===== CARD ===== */
+
+.admin-card{
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+
+    transition:0.35s ease;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+.admin-card:hover{
+    transform:translateY(-8px);
+}
+
+
+/* ===== IMAGE ===== */
+
+.admin-image-box{
+    width:100%;
+
+    height:240px;
+
+    overflow:hidden;
+}
+
+
+.admin-image-box img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:0.4s ease;
+}
+
+
+.admin-card:hover .admin-image-box img{
+    transform:scale(1.08);
+}
+
+
+/* ===== CONTENT ===== */
+
+.admin-content{
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    flex:1;
+}
+
+
+/* ===== CATEGORY ===== */
+
+.admin-category{
+    width:fit-content;
+
+    background:#111827;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:0.5px;
+}
+
+
+/* ===== PRODUCT NAME ===== */
+
+.admin-content h3{
+    font-size:28px;
+
+    line-height:1.2;
+
+    color:#111827;
+
+    margin:0;
+
+    font-family:'Playfair Display', serif;
+}
+
+
+/* ===== PRICE ===== */
+
+.admin-price{
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#16a34a;
+
+    margin:0;
+}
+
+
+/* ===== DESCRIPTION ===== */
+
+.admin-desc{
+    color:#6b7280;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin:0;
+}
+
+
+/* ===== BUTTONS ===== */
+
+.admin-actions{
+    display:flex;
+
+    gap:14px;
+
+    padding:0 24px 24px;
+}
+
+
+/* ===== DELETE ===== */
+
+.delete-btn{
+    flex:1;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#4d4c4c;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+
+/* ===== EDIT ===== */
+
+.edit-btn{
+    flex:1;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+
+.edit-btn:hover{
+    background:black;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:1000px){
+
+    .admin-top-section{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .admin-page{
+        padding:20px;
+    }
+
+    .admin-title{
+        font-size:38px;
+    }
+
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .admin-image-box{
+        height:220px;
+    }
+
+    .admin-content h3{
+        font-size:24px;
+    }
+
+}
