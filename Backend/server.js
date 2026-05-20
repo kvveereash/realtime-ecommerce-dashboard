@@ -1,6 +1,7 @@
 
 import dotenv from "dotenv";
 
+
 import ProductRoutes from './Routes/ProductRoutes.js'
 import OrderRoutes from './Routes/OrderRoutes.js'
 import authRoutes from './Routes/authRoutes.js'
@@ -8,6 +9,7 @@ import CheckoutRoutes from './Routes/CheckoutRoutes.js';
 import PaymentRoutes from './Routes/PaymentRoutes.js'
 import Analytics from './Routes/Analytics.js'
 import AdminUserRoutes from './Routes/AdminUserRoutes.js'
+import CouponRoutes from './Routes/CouponRoutes.js'
 
 
 import express from 'express';
@@ -16,7 +18,6 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 
-dotenv.config();
 
 const app = express();
 const port=5000;
@@ -38,7 +39,8 @@ io.on("connection",(socket)=>{
     })
 })
 
-
+dotenv.config();
+console.log(process.env.STRIPE_SECRET_KEY);
 
 app.use(cors());
 app.use(express.json());
@@ -54,6 +56,7 @@ app.use("/payment",PaymentRoutes)
 console.log("Payment done");
 app.use("/analytics",Analytics)
 app.use("/adminuser",AdminUserRoutes)
+app.use("/coupon",CouponRoutes);
 
 
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Orderhistory.css";
+import socket from '../../Socket';
 
 function Orderhistory() {
 
@@ -38,6 +39,20 @@ function Orderhistory() {
 
     }, [])
 
+    useEffect(()=>{
+        socket.on("orderstatusupdated",(data)=>{
+            console.log(data);
+            setorder((prev)=>{
+                prev.map((p)=>(
+                        p._id===data.orderId ? {...p,status:data.status}:p
+                ))
+            })
+        })
+        return  ()=>{
+            socket.off("orderstatusupdated")
+        }
+    })
+
    return(
             <div className="orders-page">
 
@@ -56,7 +71,7 @@ function Orderhistory() {
                         <p>{o.item.length} Items</p>
                     </div>
                     <div className="order-right">
-                        <span className="order-status">Delivered</span>
+                        <span className={`order-status ${o.status.toLowerCase()}`}>{o.status}</span>                        
                         <p>{new Date(o.createdAt).toLocaleDateString()}</p>
                     </div>
                 </div>

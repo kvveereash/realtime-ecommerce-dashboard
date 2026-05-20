@@ -8,6 +8,10 @@ function Checkout({ cart,setcart}) {
 
     const stripe=useStripe();
     const elements=useElements()  
+    const[coupon,setcoupon]=useState("");
+    const[discount,setdiscount]=useState(0);
+
+
     const [mode, setMode] = useState("delivery");
     const[form,setform]=useState({
         firstName: "",
@@ -25,6 +29,9 @@ function Checkout({ cart,setcart}) {
         return  sum+(item.price+item.qty)
     },0)
   
+    const[finaltotal,setfinaltotal]=useState(totalprice);
+
+
     const handleOrder= async ()=>{
         try{
               const paymentRes = await fetch("http://localhost:5000/payment/create-payment-intent",
@@ -83,6 +90,29 @@ function Checkout({ cart,setcart}) {
         }
     }
 
+    const handlecoupon = async()=>{
+        try{
+            const res =await  fetch("http://localhost:5000/coupon/validate",{
+              method:"POST",
+              headers:{
+                        "Content-Type":"application/json"
+              },
+              body:JSON.stringify({
+                  code:coupon,
+                  total:totalprice
+              })
+            })
+            const data = await res.json();
+            console.log(data);
+            setdiscount(data.discountamount);
+            setfinaltotal(data.finaltotal);
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
+    }
+
     
 return ( 
   <div className="checkout-page">
@@ -133,12 +163,42 @@ return (
             </div>
       ))}
 
-      <div className="total">
-        Total: ₹{totalprice}
-      </div>
+<div className="total">
 
+    <div className="coupon-box">
+        <input
+            type="text"
+            placeholder="Enter Coupon"
+            value={coupon}
+            onChange={(e)=>setcoupon(e.target.value)}
+        />
+
+        <button onClick={handlecoupon}>
+            Apply Coupon
+        </button>
     </div>
 
+    <div className="price-box">
+
+    <div className="price-row">
+        <span>Discount</span>
+        <span>₹{discount}</span>
+    </div>
+
+    <div className="price-row">
+        <span>Total</span>
+        <span>₹{totalprice}</span>
+    </div>
+
+    <div className="final-row">
+        <span>Final Total</span>
+        <span>₹{finaltotal}</span>
+    </div>
+
+</div>
+
+</div>
+    </div>
   </div>
 </div>
   )

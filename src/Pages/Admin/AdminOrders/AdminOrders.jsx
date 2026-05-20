@@ -40,7 +40,7 @@ function AdminOrders() {
 
 
 
-    const updatestatus=(id)=>{
+    const updatestatus=(id,status)=>{
         try{
             fetch(`http://localhost:5000/orders/${id}`,
                 {
@@ -49,12 +49,12 @@ function AdminOrders() {
                                 "Content-Type":"application/json"
                             },
                     body:JSON.stringify({
-                                            status:"Delivered"
+                                            status:status
                                         })
                 }
             )
             fetchorders();
-            toast.success("Order Delivered");
+            toast.success(`Order ${status}`);
         }
         catch(error)
         {
@@ -92,11 +92,7 @@ function AdminOrders() {
               <h2 className="order-id">Order #{index + 1}</h2>
               <p className="order-date">{new Date(o.createdAt).toLocaleDateString()}</p>
             </div>
-
-            <span className={o.status === "Delivered" ? "status delivered" : "status pending"}>
-              {o.status}
-            </span>
-
+            <span className={o.status === "Delivered" ? "status delivered" : "status pending"}>{o.status}</span>
           </div>
 
           <div className="order-user-box">
@@ -136,17 +132,14 @@ function AdminOrders() {
           </div>
 
           <div className="order-bottom">
-            <button className="view-btn">View Details</button>
-            <button
-              className={o.status === "Delivered" ? "deliver-btn delivered-btn-active" : "deliver-btn"}
-              disabled={o.status === "Delivered"}
-              onClick={() => updatestatus(o._id)}
-            >
-              {o.status === "Delivered" ? "Delivered" : "Mark Delivered"}
-            </button>
-
+            <select className="status-select"  value={o.status}  onChange={(e)=>updatestatus(o._id,e.target.value)}>
+              <option value="Pending">Pending</option>
+              <option value="Processing">Processing</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
           </div>
-
         </div>
 
       ))}

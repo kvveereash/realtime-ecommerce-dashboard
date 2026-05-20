@@ -440,6 +440,29 @@
     opacity:0.9;
 }
 
+.status-select{
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.status-select:hover{
+    border-color: black;
+    background: white;
+}
+
+.status-select:focus{
+    border-color: black;
+    background: white;
+}
+
 
 /* RESPONSIVE */
 

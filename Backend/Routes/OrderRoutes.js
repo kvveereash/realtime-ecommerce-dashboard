@@ -59,6 +59,7 @@ router.post("/", verifyToken, async (req, res) => {
         }
         io.emit("newOrder",newOrder)
         console.log("ORDER SAVED");
+        
         res.json({
             message: "Order Placed Successfully"
         });
@@ -96,6 +97,10 @@ router.put("/:id",async(req,res)=>{
                 }
             )
                 res.json(updateorder);
+                io.emit("orderstatusupdated",{
+                    orderId:updateorder._id,
+                    status:updateorder.status
+                })
             }
         catch(error)
         {

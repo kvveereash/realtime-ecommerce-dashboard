@@ -65,8 +65,16 @@ function Cart({cart,setcart,email}) {
   <div className="shop-page">
 
     <h1 className="shop-title">Shop</h1>
-
-    {cart.map((c) => (
+    {
+      cart.length===0 ?
+    (
+        <div className="empty-cart">
+          <h1>Your Cart is Empty</h1>
+          <p>Add delicious items to continue shopping</p>
+        </div>    
+    ):
+    (
+      cart.map((c) => (
       <div key={c._id } className="shop-product">
         <div className="shop-img">
           <img src={c.image} alt={c.name} />
@@ -85,15 +93,22 @@ function Cart({cart,setcart,email}) {
         </div>
       </div>
       
-    ))}
+    )))}
 
-    <div className="total">
-      Total: ₹{totalprice}
-    </div>
+<div className="cart-footer">
+    
     <div>
-        <button className="add-btn" onClick={()=>{handleCheckout();navigate("/checkout")}}>Add to bag</button>
+        <button className="add-btn" onClick={()=>{
+          if(cart.length===0)
+          { 
+            <h1>cart is empty</h1>
+            toast.error("Cart is empty"); 
+            return;
+          }
+          handleCheckout(); navigate("/checkout")}}>Add to bag</button>
     </div>
 
+  </div>
   </div>
 );
 }
