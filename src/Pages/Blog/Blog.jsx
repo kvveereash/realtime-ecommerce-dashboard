@@ -1,5 +1,6 @@
 import React from 'react'
 import './Blog.css'
+import { motion } from "framer-motion";
 
 function Blog() {
  const posts = [
@@ -36,22 +37,22 @@ function Blog() {
   ];
 
   return (
-    <div className="blog">
+    < motion.div className="blog" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
       <h1 className="blog-title">Blog</h1>
 
-      <div className="blog-grid">
+      < motion.div className="blog-grid" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
         {posts.map((post, i) => (
-          <div key={i} className="blog-card">
+          < motion.div key={i} className="blog-card" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
             <img src={post.img} alt={post.title} />
 
             <h3>{post.title}</h3>
             <p className="desc">{post.desc}</p>
 
             <span className="meta">6/10/2021 · 1 min read</span>
-          </div>
+          </ motion.div>
         ))}
-      </div>
-    </div>
+      </ motion.div>
+    </motion.div>
   )
 }
 

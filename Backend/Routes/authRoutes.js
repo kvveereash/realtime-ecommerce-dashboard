@@ -54,6 +54,10 @@ router.post("/login",async(req,res)=>{
                 message:"Login success",
                 token,
                 userId: user._id,
+                user:{
+                        name:user.name,
+                        email:user.email
+                }
             })
     }
     catch(err)

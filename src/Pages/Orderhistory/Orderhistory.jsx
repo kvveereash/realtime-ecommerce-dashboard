@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,useState} from 'react'
 import "./Orderhistory.css";
 import socket from '../../Socket';
 
@@ -16,8 +16,8 @@ function Orderhistory() {
 
                 const res = await fetch("http://localhost:5000/orders", {
                     headers: {
-                        Authorization: token
-                    }
+                            Authorization: `Bearer ${token}`                    
+                        }
                 });
 
                 const data = await res.json();
@@ -57,7 +57,7 @@ function Orderhistory() {
             <div className="orders-page">
 
             <div className="orders-top">
-                <h1>Order History</h1>
+                <h1>Order History 📜</h1>
                 <p>Your curated culinary purchases</p>
             </div>
 

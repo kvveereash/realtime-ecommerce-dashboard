@@ -3,7 +3,7 @@ import Order from "../models/Orders.js";
 import Product from '../models/Product.js';
 import { verifyToken } from "../middleware/auth.js";
 import { io } from "../server.js";
-
+import SendMail from "../utils/SendMail.js";
 
 const router = express.Router();
 
@@ -44,6 +44,7 @@ router.post("/", verifyToken, async (req, res) => {
            total
         });
         await newOrder.save();
+        await SendMail(email,"Order Confirmed",`Your order has been placed successfully.Order Total: ₹${total}`)
         console.log("ITEMS:", items);
          
         for( const i of items)
@@ -59,7 +60,6 @@ router.post("/", verifyToken, async (req, res) => {
         }
         io.emit("newOrder",newOrder)
         console.log("ORDER SAVED");
-        
         res.json({
             message: "Order Placed Successfully"
         });

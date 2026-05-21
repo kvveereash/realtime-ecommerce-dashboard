@@ -1,9 +1,59 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import "./Profile.css";
 
 function Profile({ password, email, cart ,name}) {
+    
+    let[order,setorder]=useState([]);
+    let user = null;
+        try{
+            const userdata = localStorage.getItem("user");
+            if(userdata){
+                user = JSON.parse(userdata);
+            }
+        }
+        catch(error){
+            console.log(error.message);
+        }
 
-  const user = JSON.parse(localStorage.getItem("user"))
+
+    useEffect(() => {
+
+    const fetchOrders = async () => {
+
+        try{
+
+            const token = localStorage.getItem("token");
+
+            const res = await fetch(
+                "http://localhost:5000/orders",
+                {
+                    method:"GET",
+
+                    headers:{
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+            const data = await res.json();
+
+            console.log(data);
+
+            setorder(data);
+
+        }
+        catch(error){
+
+            console.log(error.message);
+
+        }
+
+    }
+
+    fetchOrders();
+
+}, []);
+
 
   return (
   <div className="profile-page">
@@ -31,7 +81,7 @@ function Profile({ password, email, cart ,name}) {
             </div>
 
             <div className="stat-box">
-              <h3>12</h3>
+              <h3>{order?.length || 0}</h3>
               <p>Orders</p>
             </div>
 

@@ -1,11 +1,11 @@
 import "./About.css";
-
+import { motion } from "framer-motion";
 import "./About.css";
 
 function About() {
   return (
-    <div className="about">
-      <div className="about-container">
+    < motion.div className="about"  initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
+      <motion.div className="about-container">
 
         {/* TOP SECTION */}
         <div className="about-top">
@@ -16,15 +16,15 @@ function About() {
             />
           </div>
 
-          <div className="about-text">
+          <motion.div className="about-text">
             <h1>
               My name is Jane and I love to write about food.
             </h1>
-          </div>
+          </motion.div>
         </div>
 
         {/* PARAGRAPH */}
-        <div className="about-content">
+        <motion.div className="about-content" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
           <p>
             I grew up in the countryside, Michigan to be exact, and my family
             always gathered together for mealtimes. We would cook together and
@@ -47,18 +47,18 @@ function About() {
             </p>
 
 
-        </div>
+        </motion.div>
 
         {/* BOTTOM IMAGE */}
-        <div className="about-bottom-img">
+        <motion.div className="about-bottom-img" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
           <img
             src="https://images.unsplash.com/photo-1509440159596-0249088772ff"
             alt="food"
           />
-        </div>
+        </motion.div>
 
-      </div>
-    </div>
+      </motion.div>
+    </ motion.div>
   );
 }
 

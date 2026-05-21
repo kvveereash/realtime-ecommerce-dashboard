@@ -12,7 +12,7 @@ return(
                      ) : (
           <>
             <div className="wishlist-hero">
-              <h1 className="wishlist-title">Saved Favorites</h1>
+              <h1 className="wishlist-title"> ❤️ Saved Favorites</h1>
               <p className="wishlist-subtitle">Your curated collection of culinary delights</p>
             </div>
             <div className="wishlist-grid">

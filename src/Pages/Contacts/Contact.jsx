@@ -1,23 +1,23 @@
 import React from 'react'
-
+import { motion } from "framer-motion";
 import "./Contact.css";
 
 function Contact() {
   return (
-    <div className="contact">
+    < motion.div className="contact" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
 
-      <div className="contact-wrapper">
+      <motion.div className="contact-wrapper" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
 
         {/* LEFT IMAGE */}
-        <div className="contact-left">
+        <motion.div className="contact-left" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
           <img
             src="assets/conatct.jpg"
             alt="contact"
           />
-        </div>
+        </motion.div>
 
         {/* RIGHT CONTENT */}
-        <div className="contact-right">
+        <motion.div className="contact-right" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
 
           <h1>Get in touch</h1>
 
@@ -29,7 +29,7 @@ function Contact() {
           <p className="contact-info">info@thos.com</p>
           <p className="contact-info">123-456-7890</p>
 
-          <form className="contact-form">
+          <motion.form className="contact-form"initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
 
             <label>Name*</label>
             <input type="text" placeholder="Your name" />
@@ -45,13 +45,13 @@ function Contact() {
 
             <button type="submit">Submit</button>
 
-          </form>
+          </motion.form>
 
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   );
 }
 

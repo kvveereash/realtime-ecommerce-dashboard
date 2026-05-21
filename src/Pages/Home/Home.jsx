@@ -1,21 +1,15 @@
 import "./Home.css";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
-    <div className="home">
+    <motion.div className="home"  initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
+      <motion.section  initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}} className="hero">
+      <h1>My culinary journey <br /> from A to Z</h1>
+      <p>Join me for daily reflections and delicious recipes</p>
+    </motion.section>
 
-  <section className="hero">
-  <h1>
-    My culinary journey <br /> from A to Z
-  </h1>
-
-  <p>
-    Join me for daily reflections and delicious recipes
-  </p>
-</section>
-
-      <section className="blog-grid">
-
+      <motion.section className="blog-grid" initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
         <div className="blog-card">
           <img src="assets/Homenew1.avif" alt="" />
           <h3>Hot-cross buns and Easter fun</h3>
@@ -30,20 +24,19 @@ function Home() {
           <span>6/10/2021 · 1 min read</span>
         </div>
 
-       
-
+      
         <div className="blog-card">
           <img src="assets/homenew4.avif" alt="" />
           <h3>Sourdough baking 101</h3>
           <p>I actually jumped on the sourdough bandwagon way back.</p>
           <span>6/10/2021 · 1 min read</span>
         </div>
-      </section>
+      </motion.section>
 
       <div className="more-btn">
         <button>More articles</button>
       </div>
-        <section className="promo">
+        < motion.section className="promo"initial={{ opacity: 0 }}   animate={{opacity: 1}}transition={{duration: 0.7}}>
                 <div className="promo-text">
                 <h2>It’s official: The best of Thos</h2>
                 <p>
@@ -56,7 +49,7 @@ function Home() {
                 <img src="assets/Home5.avif" alt="" />
             </div>
 
-        </section>
+        </motion.section>
         <section className="insta">
         <h2>Follow on Instagram @Thos</h2>
         <div className="insta-grid">
@@ -67,7 +60,7 @@ function Home() {
         </div>
         </section>
 
-    </div>
+    </motion.div>
   );
 }
 

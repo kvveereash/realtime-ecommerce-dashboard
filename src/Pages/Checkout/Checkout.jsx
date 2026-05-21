@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { toast } from 'react-toastify';
 
-function Checkout({ cart,setcart}) {
+function Checkout({ cart,setcart,shownotification}) {
 
     const stripe=useStripe();
     const elements=useElements()  
@@ -117,7 +117,7 @@ function Checkout({ cart,setcart}) {
 return ( 
   <div className="checkout-page">
 
-  <h2 className="checkout-title">Checkout</h2>
+  <h2 className="checkout-title">Checkout 🧾</h2>
 
   <div className="checkout-container">
 
@@ -145,13 +145,13 @@ return (
       <div  className="card-box">
         <CardElement/>
       </div>
-      <button className="order-btn"  onClick={handleOrder}>Order</button>
+      <button className="order-btn"  onClick={()=>{handleOrder();shownotification("Order Update","Food is arriving 🚚")}}>Order</button>
 
     </div>
 
     <div className="checkout-right">
 
-      <h3>In Your Bag</h3>
+      <h3>In Your Bag 📦</h3>
 
       {cart.map((m) => (
         <div className="cart-item" key={m.id}>
