@@ -21,7 +21,7 @@ function Register({password,setpassword,email,setemail,name,setname}) {
         setIndex((prev) => (prev + 1) % images.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [images.length]);
 
 
     const handlesignin=async(e)=>{
