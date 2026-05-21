@@ -17,41 +17,27 @@ function Profile({ password, email, cart ,name}) {
 
 
     useEffect(() => {
-
     const fetchOrders = async () => {
-
         try{
-
             const token = localStorage.getItem("token");
-
             const res = await fetch(
                 "http://localhost:5000/orders",
                 {
                     method:"GET",
-
                     headers:{
                         "Authorization": `Bearer ${token}`
                     }
                 }
             );
-
             const data = await res.json();
-
             console.log(data);
-
             setorder(data);
-
         }
         catch(error){
-
             console.log(error.message);
-
         }
-
     }
-
     fetchOrders();
-
 }, []);
 
 
