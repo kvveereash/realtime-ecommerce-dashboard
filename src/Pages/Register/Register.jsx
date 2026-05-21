@@ -32,7 +32,7 @@ function Register({password,setpassword,email,setemail,name,setname}) {
             }
             else
             {
-                const res = await fetch("http://localhost:5000/auth/register", {
+                const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/auth/register", {
                 method: "POST",
                 headers:{
                         "Content-Type": "application/json"

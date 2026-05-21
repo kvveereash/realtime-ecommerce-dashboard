@@ -17,7 +17,7 @@ function Admin() {
     const fetchproducts = async () => {
         try {
             const res = await fetch(
-                "http://localhost:5000/products"
+                "https://realtime-ecommerce-dashboard-1.onrender.com/products"
             );
             const data = await res.json();
             setproduct(data);
@@ -43,7 +43,7 @@ function Admin() {
     const handledelete = async (id) => {
         try {
             await fetch(
-                `http://localhost:5000/products/${id}`,
+                `https://realtime-ecommerce-dashboard-1.onrender.com/${id}`,
                 {
                     method: "DELETE"
                 }
@@ -81,7 +81,7 @@ function Admin() {
         try {
             if (editid) {
                 await fetch(
-                    `http://localhost:5000/products/${editid}`,
+                    `https://realtime-ecommerce-dashboard-1.onrender.com/${editid}`,
                     {
                         method: "PUT",
                         headers: {
@@ -96,7 +96,7 @@ function Admin() {
             else {
 
                 await fetch(
-                    "http://localhost:5000/products",
+                    "https://realtime-ecommerce-dashboard-1.onrender.com/products",
                     {
                         method: "POST",
                         headers: {

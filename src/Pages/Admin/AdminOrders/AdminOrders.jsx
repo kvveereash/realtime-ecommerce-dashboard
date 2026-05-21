@@ -11,7 +11,7 @@ function AdminOrders() {
 
     const fetchorders = async()=>{
         try{
-            const res=  await fetch(" http://localhost:5000/orders/all");
+            const res=  await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/orders/all");
             const data= await res.json();
             console.log(data);
             
@@ -42,7 +42,7 @@ function AdminOrders() {
 
     const updatestatus=(id,status)=>{
         try{
-            fetch(`http://localhost:5000/orders/${id}`,
+            fetch(`https://realtime-ecommerce-dashboard-1.onrender.com/orders/${id}`,
                 {
                     method:"PUT",
                     headers:{

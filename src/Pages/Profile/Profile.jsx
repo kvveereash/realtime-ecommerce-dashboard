@@ -21,7 +21,7 @@ function Profile({ password, email, cart ,name}) {
         try{
             const token = localStorage.getItem("token");
             const res = await fetch(
-                "http://localhost:5000/orders",
+                "https://realtime-ecommerce-dashboard-1.onrender.com/orders",
                 {
                     method:"GET",
                     headers:{

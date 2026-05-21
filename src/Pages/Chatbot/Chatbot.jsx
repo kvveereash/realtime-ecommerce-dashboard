@@ -24,7 +24,7 @@ function ChatBot(){
 
         try{
             const res = await fetch(
-                "http://localhost:5000/ai",
+                "https://realtime-ecommerce-dashboard-1.onrender.com/ai",
                 {
                     method:"POST",
                     headers:{

@@ -7,7 +7,7 @@ function UserDetails() {
 
     const fetchadminuser=async()=>{
         try{
-                const res = await fetch("http://localhost:5000/adminuser")
+                const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/adminuser")
                 const data= await res.json();
                 console.log(data);
                 setadminusers(data);

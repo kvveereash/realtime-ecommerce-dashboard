@@ -17,7 +17,7 @@ function Product({cart,setcart,wishlist,setwishlist}) {
     useEffect(()=>{
         const fetchurl= async()=>{
           try{
-              const req =  await fetch('http://localhost:5000/products');
+              const req =  await fetch('https://realtime-ecommerce-dashboard-1.onrender.com/products');
               const data = await req.json();
               console.log(data); 
               setproduct(data);    

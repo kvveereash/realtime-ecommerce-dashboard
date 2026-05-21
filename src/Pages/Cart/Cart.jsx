@@ -34,7 +34,7 @@ function Cart({cart,setcart,email}) {
     const token = localStorage.getItem("token")
     let handleCheckout=async()=>{
       try {
-              const res = await fetch("http://localhost:5000/orders", {
+              const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/orders", {
               method: "POST",
               headers:{
                        "Content-Type": "application/json",

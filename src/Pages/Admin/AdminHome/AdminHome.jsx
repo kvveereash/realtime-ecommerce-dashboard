@@ -12,7 +12,7 @@ function AdminHome() {
 
   const fetchanalytics=async ()=>{
       try{
-          const res=await fetch( "http://localhost:5000/analytics");
+          const res=await fetch( "https://realtime-ecommerce-dashboard-1.onrender.com/analytics");
           const data =await res.json();
           console.log(data);
           setanalytics(data)

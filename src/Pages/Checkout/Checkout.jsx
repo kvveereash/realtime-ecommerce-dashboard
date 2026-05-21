@@ -34,7 +34,7 @@ function Checkout({ cart,setcart,shownotification}) {
 
     const handleOrder= async ()=>{
         try{
-              const paymentRes = await fetch("http://localhost:5000/payment/create-payment-intent",
+              const paymentRes = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/create-payment-intent",
                 {
                   method: "POST",
                   headers: {
@@ -63,7 +63,7 @@ function Checkout({ cart,setcart,shownotification}) {
                 }
               if (result.paymentIntent.status === "succeeded")
             {
-                const res = await fetch("http://localhost:5000/checkout", {
+                const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/checkout", {
                 method: "POST",
                 headers:{
                         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ function Checkout({ cart,setcart,shownotification}) {
 
     const handlecoupon = async()=>{
         try{
-            const res =await  fetch("http://localhost:5000/coupon/validate",{
+            const res =await  fetch("https://realtime-ecommerce-dashboard-1.onrender.com/validate",{
               method:"POST",
               headers:{
                         "Content-Type":"application/json"
