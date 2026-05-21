@@ -22,12 +22,12 @@ function Login({setlogin}) {
         setIndex((prev) => (prev + 1) % images.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [images.length]);
 
 
     const handlelogin=async(e)=>{
             e.preventDefault();
-            const res = await fetch("http://localhost:5000/auth/login", {
+            const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/login", {
             method: "POST",
             headers:{
                     "Content-Type": "application/json"
