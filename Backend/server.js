@@ -58,18 +58,14 @@ app.use("/coupon", CouponRoutes);
 app.use("/ai", AiChatRoutes);
 
 
-mongoose.set("strictQuery", false);
-
-mongoose.connect(process.env.MONGO_URI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     console.log("db connected");
 })
 .catch((err)=>{
     console.log(err);
 });
+
 server.listen(port, () => {
     console.log(`The server is connected to ${port}`);
 });
