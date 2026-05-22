@@ -20,6 +20,7 @@ dotenv.config({
     path: "./.env"
 });
 
+
 const app = express();
 const port = 5000;
 
@@ -56,8 +57,9 @@ app.use("/adminuser", AdminUserRoutes);
 app.use("/coupon", CouponRoutes);
 app.use("/ai", AiChatRoutes);
 
+
 mongoose
-.connect("mongodb://127.0.0.1:27017/ecommerce")
+.connect(process.env.MONGO_URI)
 .then(() => console.log("db connected"))
 .catch((error) => console.log(error));
 
