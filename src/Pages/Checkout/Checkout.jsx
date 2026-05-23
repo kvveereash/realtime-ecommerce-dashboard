@@ -34,7 +34,7 @@ function Checkout({ cart,setcart,shownotification}) {
 
     const handleOrder= async ()=>{
         try{
-              const paymentRes = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/create-payment-intent",
+              const paymentRes = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/payment/create-payment-intent",
                 {
                   method: "POST",
                   headers: {
