@@ -26,11 +26,11 @@ function Checkout({ cart,setcart,shownotification}) {
     }
 
     const totalprice = cart.reduce((sum,item)=>{
-        return  sum+(item.price+item.qty)
+        return  sum+(item.price*item.qty)
     },0)
   
     const[finaltotal,setfinaltotal]=useState(totalprice);
-
+    const token = localStorage.getItem("token")
 
     const handleOrder= async ()=>{
         try{
@@ -39,6 +39,8 @@ function Checkout({ cart,setcart,shownotification}) {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
+                     Authorization:`Bearer ${token}`
+
                   },
                   body: JSON.stringify
                       ({
@@ -67,10 +69,12 @@ function Checkout({ cart,setcart,shownotification}) {
                 method: "POST",
                 headers:{
                         "Content-Type": "application/json",
+                         Authorization:`Bearer ${token}`
+
                     },
                 body:JSON.stringify({
                     ...form,
-                    item:cart,
+                    items:cart,
                     total:totalprice
                 })
                 })
