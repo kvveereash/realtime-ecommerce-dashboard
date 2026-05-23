@@ -42,16 +42,18 @@ function Orderhistory() {
     useEffect(()=>{
         socket.on("orderstatusupdated",(data)=>{
             console.log(data);
-            setorder((prev)=>{
-                prev.map((p)=>(
-                        p._id===data.orderId ? {...p,status:data.status}:p
-                ))
-            })
+            setorder((prev)=>
+                prev.map((p)=>
+                    p._id===data.orderId ? {...p,status:data.status}: p
+                )
+            )
         })
-        return  ()=>{
+
+        return ()=>{
             socket.off("orderstatusupdated")
         }
-    })
+
+    },[])
 
    return(
             <div className="orders-page">
@@ -68,7 +70,7 @@ function Orderhistory() {
                     <div className="order-left">
                         <span className="order-label">Order Total</span>
                         <h2>₹{o.total}</h2>
-                        <p>{o.item.length} Items</p>
+                        <p>{o.items.length} Items</p>
                     </div>
                     <div className="order-right">
                         <span className={`order-status ${o.status.toLowerCase()}`}>{o.status}</span>                        
@@ -77,7 +79,7 @@ function Orderhistory() {
                 </div>
 
             <div className="products-wrapper">
-                {o.item.map((product,index)=>(
+                {o.items.map((product,index)=>(
             <div className="product-card" key={index}>
                 <img src={product.image} alt={product.name} className="product-image"/>
                 <div className="product-details">
