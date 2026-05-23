@@ -64,29 +64,34 @@ function Checkout({ cart,setcart,shownotification}) {
                   return;
                 }
               if (result.paymentIntent.status === "succeeded")
-            {
-                const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/checkout", {
-                method: "POST",
-                headers:{
-                        "Content-Type": "application/json",
-                         Authorization:`Bearer ${token}`
-
-                    },
-                body:JSON.stringify({
-                    ...form,
-                    items:cart,
-                    total:totalprice
-                })
-                })
-                const data= await res.json();
-                if(!res.ok)
                 {
-                    toast.error(data.message || "Order failed");
-                    return;
+                    const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/orders", {
+                        method: "POST",
+                        headers:{
+                            "Content-Type": "application/json",
+                            Authorization:`Bearer ${token}`
+                        },
+                        body:JSON.stringify({
+                            email:form.email,
+                            items:cart,
+                            total:totalprice
+                        })
+                    })
+
+                    const data= await res.json();
+
+                    if(!res.ok)
+                    {
+                        toast.error(data.message || "Order failed");
+                        return;
+                    }
+
+                    toast.success("Payment Successful & Order Saved");
+
+                    setTimeout(()=>{
+                        setcart([]);
+                    },1000);
                 }
-                toast.success("Payment Successful & Order Saved");
-                setcart([]);
-            }
           }
         catch(err)
         {

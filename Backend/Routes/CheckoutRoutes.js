@@ -17,12 +17,10 @@ router.post("/", verifyToken, async (req, res) => {
         } = req.body;
 
         const userId = req.userId;
+        console.log("REQ BODY:", req.body);
         const orderdata = new Order({
-
             email,
-
             userid: userId,
-
             items: items.map((p) => ({
                 productId: p._id,
                 name: p.name,
@@ -30,11 +28,11 @@ router.post("/", verifyToken, async (req, res) => {
                 qty: p.qty,
                 image: p.image
             })),
-
             total
         });
 
         await orderdata.save();
+        console.log("ITEMS:", items);
 
         res.json({
             message: "Order saved successfully"
@@ -43,7 +41,6 @@ router.post("/", verifyToken, async (req, res) => {
     } catch (err) {
 
         console.log(err);
-
         res.status(500).json({
             error: err.message
         });
