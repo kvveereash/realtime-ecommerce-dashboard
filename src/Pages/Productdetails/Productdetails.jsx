@@ -11,7 +11,7 @@ function Productdetails() {
     useEffect(() => {
     const fetchProduct = async () => {
       try{
-            const res  =fetch(`https://realtime-ecommerce-dashboard-1.onrender.com/products/${id}`);
+            const res  = await fetch(`https://realtime-ecommerce-dashboard-1.onrender.com/products/${id}`);
             const data = await res.json();
             setproduct(data);
         } catch (err) {
