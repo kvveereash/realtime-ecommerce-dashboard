@@ -16,8 +16,7 @@ router.post("/", verifyToken, async (req, res) => {
             total
         } = req.body;
 
-        const userId = req.user.id;
-
+        const userId = req.userId;
         const orderdata = new Order({
 
             email,
