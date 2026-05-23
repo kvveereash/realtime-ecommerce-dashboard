@@ -23,7 +23,7 @@ router.post("/", verifyToken, async (req, res) => {
 
             userid: userId,
 
-            item: items.map((p) => ({
+            items: items.map((p) => ({
                 productId: p._id,
                 name: p.name,
                 price: p.price,
