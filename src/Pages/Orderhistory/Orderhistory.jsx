@@ -70,7 +70,7 @@ function Orderhistory() {
                     <div className="order-left">
                         <span className="order-label">Order Total</span>
                         <h2>₹{o.total}</h2>
-                        <p>{o.items.length} Items</p>
+                        <p>{o.items.length ||0} Items</p>
                     </div>
                     <div className="order-right">
                         <span className={`order-status ${o.status.toLowerCase()}`}>{o.status}</span>                        
@@ -79,7 +79,7 @@ function Orderhistory() {
                 </div>
 
             <div className="products-wrapper">
-                {o.items.map((product,index)=>(
+                {o.items?.map((product,index)=>(
             <div className="product-card" key={index}>
                 <img src={product.image} alt={product.name} className="product-image"/>
                 <div className="product-details">

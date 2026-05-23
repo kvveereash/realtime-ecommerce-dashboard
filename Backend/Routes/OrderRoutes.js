@@ -35,7 +35,7 @@ router.post("/", verifyToken, async (req, res) => {
             email,
             userid: req.userId,
             item: items.map((i)=>({
-                    productId:i._id,
+                    productId:i._id || i.id,
                     name:i.name,
                     price:i.price,
                     qty:i.qty,
