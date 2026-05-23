@@ -27,7 +27,7 @@ function Login({setlogin}) {
 
     const handlelogin=async(e)=>{
             e.preventDefault();
-            const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/login", {
+            const res = await fetch("https://realtime-ecommerce-dashboard-1.onrender.com/auth/login", {            
             method: "POST",
             headers:{
                     "Content-Type": "application/json"
