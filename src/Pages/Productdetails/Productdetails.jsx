@@ -11,7 +11,7 @@ function Productdetails() {
     useEffect(() => {
     const fetchProduct = async () => {
       try{
-            const res = await fetch(`https://realtime-ecommerce-dashboard-1.onrender.com/${id}`);
+            const res  =fetch(`https://realtime-ecommerce-dashboard-1.onrender.com/products/${id}`);
             const data = await res.json();
             setproduct(data);
         } catch (err) {
@@ -22,9 +22,28 @@ function Productdetails() {
   }, [id]);
 
 
-   if (!product) {
-    return <h1>Loading...</h1>;
-  }
+  if (!product) {
+  return (
+    <div className="product-loading">
+      
+      <div className="loading-image shimmer"></div>
+
+      <div className="loading-content">
+        <div className="loading-title shimmer"></div>
+        <div className="loading-text shimmer"></div>
+        <div className="loading-text short shimmer"></div>
+
+        <div className="loading-price shimmer"></div>
+
+        <div className="loading-buttons">
+          <div className="loading-btn shimmer"></div>
+          <div className="loading-btn shimmer"></div>
+        </div>
+      </div>
+
+    </div>
+  );
+}
 
 
 return (
