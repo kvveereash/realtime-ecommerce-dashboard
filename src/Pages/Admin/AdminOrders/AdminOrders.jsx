@@ -113,7 +113,7 @@ function AdminOrders() {
 
           <div className="order-items">
 
-            {o.items.map((i, index) => (
+            {o.items?.map((i, index) => (
 
               <div className="order-item" key={index}>
 
