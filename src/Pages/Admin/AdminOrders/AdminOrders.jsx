@@ -102,7 +102,7 @@ function AdminOrders() {
               <h3>{o.userid}</h3>
             </div>
 
-            <div className="item-count">{o.item.length} Items</div>
+            <div className="item-count">{o.items?.length||0} Items</div>
 
           </div>
 
@@ -113,7 +113,7 @@ function AdminOrders() {
 
           <div className="order-items">
 
-            {o.item.map((i, index) => (
+            {o.items.map((i, index) => (
 
               <div className="order-item" key={index}>
 
