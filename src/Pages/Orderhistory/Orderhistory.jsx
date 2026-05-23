@@ -70,7 +70,7 @@ function Orderhistory() {
                     <div className="order-left">
                         <span className="order-label">Order Total</span>
                         <h2>₹{o.total}</h2>
-                        <p>{o.items.length ||0} Items</p>
+                        <p>{o.items?.length ||0} Items</p>
                     </div>
                     <div className="order-right">
                         <span className={`order-status ${o.status.toLowerCase()}`}>{o.status}</span>                        
